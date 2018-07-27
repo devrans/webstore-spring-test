@@ -16,11 +16,15 @@
 				<h1>Produkty</h1>
 				<p>Dodaj produkty</p>
 			</div>
-			<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>	
+			<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>
+			<div class="pull-right" style="padding-right:50px">
+			<a href="?language=pl">polski</a>\<a href="?language=nl">holenderski</a>
+			</div>	
 		</div>
 	</section>
 	<section class="container">
 		<form:form  modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+		<form:errors path="*" cssClass="alert alert-danger" element="div"/>
 			<fieldset>
 				<legend>Dodaj nowy produkt</legend>
 
@@ -28,6 +32,7 @@
 					<label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProduct.form.productId.label"/></label>
 					<div class="col-lg-10">
 						<form:input id="productId" path="productId" type="text" class="form:input-large"/>
+						<form:errors path="productId" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -35,6 +40,7 @@
 					<label class="control-label col-lg-2" for="name">Nazwa</label>
 					<div class="col-lg-10">
 						<form:input id="name" path="name" type="text" class="form:input-large"/>
+						<form:errors path="name" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -43,6 +49,7 @@
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
+							<form:errors path="unitPrice" cssClass="text-danger"/>
 						</div>
 					</div>
 				</div>
@@ -65,6 +72,7 @@
 					<label class="control-label col-lg-2" for="category">Kategoria</label>
 					<div class="col-lg-10">
 						<form:input id="category" path="category" type="text" class="form:input-large"/>
+						<form:errors path="category" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -72,6 +80,7 @@
 					<label class="control-label col-lg-2" for="unitsInStock">Liczba dostępnych sztuk</label>
 					<div class="col-lg-10">
 						<form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
+						<form:errors path="unitsInStock" cssClass="text-danger"/>
 					</div>
 				</div>
 
